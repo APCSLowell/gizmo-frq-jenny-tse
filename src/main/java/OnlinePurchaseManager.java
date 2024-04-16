@@ -23,19 +23,18 @@ public class OnlinePurchaseManager
   /** Returns true if any pair of adjacent purchased Gizmo objects are
   * equivalent, and false otherwise, as described in part (b).
   */
-  public boolean hasAdjacentEqualPair()
-  {
+  public boolean hasAdjacentEqualPair() {
     if(purchases.size() < 2) {
-			return false;
-		
-		for(int i=1;i<purchases.size()-1;i++) {
-			if(purchases.get(i).equals(purchases.get(i+1))
-					|| purchases.get(i-1).equals(purchases.get(i))) {
-				return true;
-			}
-		}
-		return false;
-	}
+        return false;
+    }
+    
+    for(int i = 0; i < purchases.size() - 1; i++) {
+        if(purchases.get(i).equals(purchases.get(i + 1))) {
+            return true;
+        }
+    }
+    return false;
+}
   }
   public OnlinePurchaseManager()
   {
